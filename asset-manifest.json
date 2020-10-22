@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/static/js/main.0c8845f7.chunk.js",
-    "main.js.map": "/static/js/main.0c8845f7.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.09b85ec0.js",
-    "runtime-main.js.map": "/static/js/runtime-main.09b85ec0.js.map",
-    "static/css/2.44309f2b.chunk.css": "/static/css/2.44309f2b.chunk.css",
-    "static/js/2.34712970.chunk.js": "/static/js/2.34712970.chunk.js",
-    "static/js/2.34712970.chunk.js.map": "/static/js/2.34712970.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.566bf8949d08eee0c6cf6e0a265969f0.js": "/precache-manifest.566bf8949d08eee0c6cf6e0a265969f0.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.44309f2b.chunk.css.map": "/static/css/2.44309f2b.chunk.css.map",
-    "static/css/main.5ecd60fb.chunk.css.map": "/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.34712970.chunk.js.LICENSE.txt": "/static/js/2.34712970.chunk.js.LICENSE.txt"
+    "main.css": "/aspititry_test-task/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/aspititry_test-task/static/js/main.0c8845f7.chunk.js",
+    "main.js.map": "/aspititry_test-task/static/js/main.0c8845f7.chunk.js.map",
+    "runtime-main.js": "/aspititry_test-task/static/js/runtime-main.b51f7a13.js",
+    "runtime-main.js.map": "/aspititry_test-task/static/js/runtime-main.b51f7a13.js.map",
+    "static/css/2.44309f2b.chunk.css": "/aspititry_test-task/static/css/2.44309f2b.chunk.css",
+    "static/js/2.40963ed5.chunk.js": "/aspititry_test-task/static/js/2.40963ed5.chunk.js",
+    "static/js/2.40963ed5.chunk.js.map": "/aspititry_test-task/static/js/2.40963ed5.chunk.js.map",
+    "index.html": "/aspititry_test-task/index.html",
+    "precache-manifest.fc2204a1bd5df94523f602efd8584613.js": "/aspititry_test-task/precache-manifest.fc2204a1bd5df94523f602efd8584613.js",
+    "service-worker.js": "/aspititry_test-task/service-worker.js",
+    "static/css/2.44309f2b.chunk.css.map": "/aspititry_test-task/static/css/2.44309f2b.chunk.css.map",
+    "static/css/main.5ecd60fb.chunk.css.map": "/aspititry_test-task/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.40963ed5.chunk.js.LICENSE.txt": "/aspititry_test-task/static/js/2.40963ed5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.09b85ec0.js",
+    "static/js/runtime-main.b51f7a13.js",
     "static/css/2.44309f2b.chunk.css",
-    "static/js/2.34712970.chunk.js",
+    "static/js/2.40963ed5.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
     "static/js/main.0c8845f7.chunk.js"
   ]
