@@ -7,10 +7,11 @@ import ButtonGroup from "antd/lib/button/button-group";
 import ModalForm from "../modalForm/modalForm";
 
 import { useDispatch } from "react-redux";
+
 import {
   deleteWorkoutById,
+  editWorkout,
   addNewWorkout,
-  editWorkouts,
 } from "../../redux/actionCreator";
 
 const TrainingTable = ({ data }) => {
@@ -37,23 +38,16 @@ const TrainingTable = ({ data }) => {
     dispatch(deleteWorkoutById(id));
   };
 
-  const handleOk = (objFromForm) => {
-    const newData = [...data];
-    const newObj = { ...objFromForm };
+  const handleOkEdit = (objFromForm) => {
+    dispatch(editWorkout(objFromForm));
 
-    const match = lodash.find(newData, { id: newObj.id });
-    if (match) {
-      const index = lodash.indexOf(
-        newData,
-        lodash.find(newData, { id: newObj.id })
-      );
-      newData.splice(index, 1, newObj)
-      dispatch(editWorkouts(newData));
-    } else {
-      newObj.id = newData[newData.length-1].id + 1;
-      newData.push(newObj);
-      dispatch(addNewWorkout(newObj));
-    }
+    setAddFormIsOpen(false);
+    setEditFormIsOpen(false);
+  };
+
+  const handleOkNew = (objFromForm) => {
+    dispatch(addNewWorkout(objFromForm));
+
     setAddFormIsOpen(false);
     setEditFormIsOpen(false);
   };
@@ -147,7 +141,7 @@ const TrainingTable = ({ data }) => {
       <ModalForm
         title="Edit workout session"
         isOpen={editFormIsOpen}
-        handleOk={handleOk}
+        handleOk={handleOkEdit}
         handleCancel={() => setEditFormIsOpen(false)}
         data={formData}
         values={formData}
@@ -155,7 +149,7 @@ const TrainingTable = ({ data }) => {
       <ModalForm
         title="Add workout session"
         isOpen={addFormIsOpen}
-        handleOk={handleOk}
+        handleOk={handleOkNew}
         handleCancel={() => setAddFormIsOpen(false)}
         values={emptyFormData}
       />

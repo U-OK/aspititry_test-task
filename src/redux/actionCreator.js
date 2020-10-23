@@ -1,41 +1,67 @@
-import { GET_WORKOUT_DATA, DELETE_WORKOUT_BY_ID, ADD_NEW_WORKOUT, EDIT_WORKOUTS } from "./actionTypes";
+import Axios from "axios";
+import { GET_WORKOUT_DATA_SUCCESS } from "./actionTypes";
 
-// export const getPlaces = () => {
-//   return (dispatch) => {
-//     dispatch(getPlacesStarted());
+export const getWorkoutData = () => {
+  return (dispatch) => {
 
-//     const {
-//       user: { pk },
-//     } = JSON.parse(localStorage.getItem("User data"));
+    Axios.get('/api/workouts')
+      .then((res) => {
+        dispatch(getWorkoutDataSuccess(res.data));
+      })
+      .catch((err) => {
+        console.log(err)
+      });
+  };
+};
 
-//     api
-//       .GET(`places/?format=json&owner=${pk}`)
-//       .then((res) => {
-//         dispatch(getPlacesSuccess(res.data));
-//       })
-//       .catch((err) => {
-//         dispatch(getPlacesFailure(err.message));
-//       });
-//   };
-// };
+export const deleteWorkoutById = (id) => {
+  return (dispatch) => {
 
-const deleteWorkoutById = (id) => ({
-  type: DELETE_WORKOUT_BY_ID,
-  payload: id ,
+    Axios.delete(`/api/workouts/${id}`)
+      .then((res) => {
+        // dispatch(deleteWorkoutByIdSuccess(res.data));
+        dispatch(getWorkoutData())
+      })
+      .catch((err) => {
+        console.log(err)
+      });
+  };
+};
+
+export const editWorkout = (editedWorkout) => {
+  return (dispatch) => {
+
+    Axios.put('/api/workouts', {editedWorkout})
+      .then((res) => {
+        // dispatch(getWorkoutDataSuccess(res.data));
+        dispatch(getWorkoutData())
+      })
+      .catch((err) => {
+        console.log(err)
+      });
+  };
+};
+
+export const addNewWorkout = (newWorkout) => {
+  return (dispatch) => {
+
+    Axios.post('/api/workouts', {newWorkout})
+      .then((res) => {
+        // dispatch(getWorkoutDataSuccess(res.data));
+        dispatch(getWorkoutData())
+      })
+      .catch((err) => {
+        console.log(err)
+      });
+  };
+};
+
+const getWorkoutDataSuccess = (workouts) => ({
+  type: GET_WORKOUT_DATA_SUCCESS,
+  payload: workouts
 });
 
-const addNewWorkout = (newWorkout) => ({
-  type: ADD_NEW_WORKOUT,
-  payload: newWorkout,
-});
+const deleteWorkoutByIdSuccess = () => ({
+  type: ''
+})
 
-const editWorkouts = (newWorkouts) => ({
-  type: EDIT_WORKOUTS,
-  payload: newWorkouts,
-});
-
-const getWorkoutData = () => ({
-  type: GET_WORKOUT_DATA,
-});
-
-export { deleteWorkoutById, addNewWorkout, editWorkouts };
